@@ -1,5 +1,6 @@
-body {
+html body {
   margin: 0;
+  padding: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
@@ -7,6 +8,9 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-color: #0a94b1;
   color: white;
+  overflow-x: hidden;
+  overflow-y: auto;
+  height: 100%;
 }
 
 .h1 {
@@ -24,16 +28,20 @@ code {
   flex-direction: column;
   justify-content: center;
   border: 1px blanchedalmond;
+  overflow: auto;
 }
 
 #form {
   width: 50%;
   border: 1px solid #3686a8;
-  padding: 2%;
+  padding: 15px;
+  align-items: center;
   box-shadow: 1px 5px #317fa0;
-  justify-content: center;
-  margin: 20px;
+  margin: 10px;
+  justify-self: center;
 }
+
+
 .form-div {
   padding: 0.5em;
   display: flex;
@@ -41,37 +49,42 @@ code {
   width: 90%;
   border: none;
   text-decoration: none;
+  margin-left: 7%;
 }
 
 .form-labels {
   border: none;
-  text-overflow: inherit;
+  text-overflow: ellipsis;
   white-space: nowrap;
   padding: 0.5em 0.5em 0.5em 0.5em;
   width: 80%;
   overflow: hidden;
   text-align: left;
   justify-content: center;
+  margin: 0.5em;
 }
 .form-input {
   border: none;
   white-space: nowrap;
   overflow: hidden;
-  text-overflow: inherit;
+  text-overflow: ellipsis;
   padding: 0.5em 0.5em 0.5em 0.5em;
   width: 100%;
   text-align: center;
   justify-content: center;
 }
 .form-btn {
-  width: 30%;
+  width: 50%;
   justify-content: center;
   align-items: center;
   text-align: center;
   padding: 0.5em;
   border: 0.5em;
   cursor: pointer;
-  margin: 20px;
+  margin: 7%;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .form-btn:hover {
@@ -88,6 +101,7 @@ code {
   justify-content: center;
   align-items: center;
   margin-top: 0.5em;
+  padding: 1em;
 }
 .Box2 {
   width: 30%;
@@ -96,20 +110,23 @@ code {
   margin: 20px;
   box-shadow: 1px 5px #317fa0;
   cursor: pointer;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 .Box2:hover {
   background: #3686a8;
   color: #fff;
 }
 .form-div-collection {
-  width: 50%;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   margin: 20px;
   padding: 20px;
 }
-.form-div-passenger {
+.form-div-passenger, .form-div-collection {
   width: 50%;
   display: flex;
   justify-content: center;
@@ -124,7 +141,50 @@ code {
   padding: 20px;
   margin: 20px;
 }
-.passenger-summary-page, .collection-summary-page {
+
+.passenger-summary-page,
+.collection-summary-page {
   margin: 20px;
   padding: 20px;
+}
+
+@media only screen and (max-width: 1000px) {
+  /* For mobile phones: */
+  #form,
+  .form-div-passenger,
+  .form-div-collection {
+    width: 80%;
+    flex-direction: column;
+  }
+
+  .form-div {
+    width: 90%;
+    flex-direction: column;
+  }
+  #form {
+    overflow-y: auto;
+  }
+  .form-btn {
+    width: 50%;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  /* For tablets and smaller screens: */
+
+  #form,
+  .form-div-passenger,
+  .form-div-collection {
+    width: 70%;
+    flex-direction: column;
+    overflow-y: auto;
+  }
+
+  .form-div {
+    width: 80%;
+    flex-direction: column;
+  }
+  .form-btn {
+    width: 30%;
+  }
 }
