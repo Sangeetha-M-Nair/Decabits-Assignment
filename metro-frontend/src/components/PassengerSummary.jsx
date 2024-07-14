@@ -55,6 +55,7 @@ export default function PassengerSummary() {
           ))}
         </ul>
       </div>
+      <button onClick={() => window.print()}>PRINT</button>
     </div>
   );
 }

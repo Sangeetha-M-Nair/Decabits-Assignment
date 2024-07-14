@@ -44,6 +44,8 @@ function CollectionSummary() {
         ) : (
           <p>Loading...</p>
         )}
+        <button onClick={() => window.print()}>PRINT</button>
+       
       </div>
     </div>
   );
