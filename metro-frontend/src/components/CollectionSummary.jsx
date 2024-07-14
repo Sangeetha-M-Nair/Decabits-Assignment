@@ -23,9 +23,11 @@ function CollectionSummary() {
     <div className="collection-summary-page">
       <h1>Collection Summary</h1>
       <div className="form-div-collection">
-        <label className="form-labels">Ticket booking Station :</label>
+        <label className="form-labels-collection">
+          Ticket booking Station :
+        </label>
         <select
-          className="form-input"
+          className="form-input-collection"
           value={station}
           onChange={(e) => setStation(e.target.value)}
         >
@@ -45,7 +47,6 @@ function CollectionSummary() {
           <p>Loading...</p>
         )}
         <button onClick={() => window.print()}>PRINT</button>
-       
       </div>
     </div>
   );
